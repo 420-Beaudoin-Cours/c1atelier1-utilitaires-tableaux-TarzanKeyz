@@ -127,4 +127,50 @@ public class Tableaux {
 
     }
 
+    public static int maximum (String [] tabStr){
+        int max = Integer.parseInt(tabStr[0]);
+
+        for (int i=0; i<tabStr.length; i++){
+            if (max < Integer.parseInt(tabStr[i]))
+                max = Integer.parseInt(tabStr[i]);
+        }
+        return max;
+    }
+
+    public static int minimum (String [] tab){
+        int min =  Integer.parseInt(tab[0]);
+
+        for (int i=0; i<tab.length; i++){
+            if (min > Integer.parseInt(tab [i]))
+                min = Integer.parseInt(tab [i]);
+        }
+        return min;
+    }
+
+    public static double moyenne (String [] tab){
+        double total = 0;
+        double moyenne;
+
+        for (int i=0; i<tab.length; i++){
+            total += Double.parseDouble(tab[i]);
+        }
+
+        return moyenne = total / tab.length;
+    }
+
+    public static int fouilleSeq (String [] tab, String cherche){
+        boolean trouve = false;
+        int parcours = 0;
+
+        while (parcours < tab.length && !trouve){
+            if (tab [parcours].equals(cherche))
+                trouve = true;
+            else
+                parcours ++;
+        }
+        if (trouve)
+            return parcours;
+        else
+            return -1;
+    }
 }
