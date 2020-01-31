@@ -52,26 +52,18 @@ public class TableauxTest {
 
     @org.junit.Test
     public void moyenne() {
-        
+        double [] tab = {25, 25, 25, 25, 25};
+        double expectMean = 25.0;
+        double mean = Tableaux.moyenne(tab);
+        assertEquals(expectMean, mean, 0);
     }
 
     @org.junit.Test
     public void fouilleSeq() {
-    }
+        int [] tab = {10, -5, 40, 700, 4, 0};
+        int expectedIndice = 2;
+        int indice = Tableaux.fouilleSeq(tab, 40);
+        assertEquals(expectedIndice, indice);
 
-    @org.junit.Test
-    public void testMaximum() {
-    }
-
-    @org.junit.Test
-    public void testMinimum() {
-    }
-
-    @org.junit.Test
-    public void testMoyenne() {
-    }
-
-    @org.junit.Test
-    public void testFouilleSeq() {
     }
 }
