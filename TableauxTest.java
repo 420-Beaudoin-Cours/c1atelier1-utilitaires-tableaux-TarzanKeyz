@@ -59,11 +59,35 @@ public class TableauxTest {
     }
 
     @org.junit.Test
+    public void moyenneTest() {
+        double [] tabVide = new double[0];
+        double expectMeanVide = 0.0;
+        double meanVide = Tableaux.moyenne(tabVide);
+        assertEquals(expectMeanVide, meanVide, 0);
+    }
+
+    @org.junit.Test
     public void fouilleSeq() {
         int [] tab = {10, -5, 40, 700, 4, 0};
         int expectedIndice = 2;
         int indice = Tableaux.fouilleSeq(tab, 40);
         assertEquals(expectedIndice, indice);
+
+        int expectedIndicePremier = 0;
+        int indicePremier = Tableaux.fouilleSeq(tab, 10);
+        assertEquals(expectedIndicePremier, indicePremier);
+
+        int expectedIndiceDernier = 5;
+        int indiceDernier = Tableaux.fouilleSeq(tab, 0);
+        assertEquals(expectedIndiceDernier, indiceDernier);
+
+        int expectedIndiceAbsent = -1;
+        int indiceAbsent = Tableaux.fouilleSeq(tab, 800);
+        assertEquals(expectedIndiceAbsent, indiceAbsent);
+
+
+
+
 
     }
 }
